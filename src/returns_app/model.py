@@ -117,7 +117,7 @@ def train_model(data_path: str | Path, artifact_path: str | Path) -> dict[str, A
     artifact = Path(artifact_path)
     artifact.parent.mkdir(parents=True, exist_ok=True)
     joblib.dump(pipeline, artifact)
-    return {"rows": len(data), "features": len(FEATURE_COLUMNS), "artifact": str(artifact)}
+    return {"rows": len(data), "features": len(FEATURE_COLUMNS), "artifact": str(artifact), "pipeline": pipeline}
 
 
 def load_model(artifact_path: str | Path) -> Pipeline:

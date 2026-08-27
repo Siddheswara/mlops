@@ -8,3 +8,7 @@ artifacts/*
 !artifacts/**/*.dvc
 *.egg-info/
 /returns_dataset.csv
+mlruns/
+mlartifacts/
+mlflow.db
+*.db-journal

@@ -8,11 +8,6 @@ from typing import Any
 import mlflow
 from sklearn.pipeline import Pipeline
 
-SKOPS_TRUSTED = [
-    "returns_app.model.add_features",
-    "numpy.dtype",
-]
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_EXPERIMENT = "returns-production-new"
 
@@ -77,6 +72,5 @@ def log_training_run(
         mlflow.sklearn.log_model(
             pipeline,
             artifact_path="sklearn_pipeline",
-            skops_trusted_types=SKOPS_TRUSTED,
         )
         return mlflow.active_run().info.run_id

@@ -76,7 +76,7 @@ def log_training_run(
         mlflow.log_artifact(summary["artifact"])
         mlflow.sklearn.log_model(
             pipeline,
-            name="sklearn_pipeline",
+            artifact_path="sklearn_pipeline",
             skops_trusted_types=SKOPS_TRUSTED,
         )
         return mlflow.active_run().info.run_id
